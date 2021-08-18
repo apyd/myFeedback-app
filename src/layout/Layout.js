@@ -1,12 +1,24 @@
-import { Fragment } from 'react'
 import MainNavigation from './MainNavigation'
+
+import styled from 'styled-components'
+import { breakpoints } from '../utils/breakpoints'
+
+const PageLayout = styled.div`
+  font-size: 12px;
+  @media ${breakpoints.tablet} {
+    font-size: 14px;
+  }
+  @media ${breakpoints.laptop} {
+    font-size: 16px;
+  }
+`
 
 const Layout = (props) => {
   return (
-    <Fragment>
+    <PageLayout>
       <MainNavigation />
       {props.children}
-    </Fragment>
+    </PageLayout>
   )
 }
 
