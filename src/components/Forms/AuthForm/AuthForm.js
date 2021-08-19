@@ -4,7 +4,7 @@ import Login from './Login'
 import Register from './Register'
 import ResetPassword from './ResetPassword'
 import { FormHeader, FormBody, FormFooter } from '../Forms'
-import { Header1, Header2, Paragraph, Span } from '../../UI/Text'
+import { Heading1, Heading2, Paragraph, Span } from '../../UI/Text'
 import styled from 'styled-components'
 import { useState } from 'react'
 
@@ -35,14 +35,14 @@ const AuthForm = () => {
   return (
     <FormWrapper>
       <FormHeader>
-        <Header1>
+        <Heading1>
           Welcome to <Span color="var(--blue)">Feedback app</Span>
-        </Header1>
-        <Header2>
+        </Heading1>
+        <Heading2>
           {authView === authMode.login && 'Sign in'}
           {authView === authMode.register && 'Sign up'}
           {authView === authMode.changePassword && 'Change password'}
-        </Header2>
+        </Heading2>
       </FormHeader>
       <FormBody>
         {authView === authMode.login && (
