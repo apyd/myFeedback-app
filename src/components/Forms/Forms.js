@@ -45,7 +45,6 @@ export const FormFooter = styled.footer`
   align-items: center;
   justify-content: center;
   padding-top: 30px;
-  margin-top: 20px;
   background-color: var(--very-light-grey);
   flex: 1;
 `
