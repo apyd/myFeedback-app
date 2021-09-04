@@ -1,4 +1,4 @@
-import MainNavigation from './MainNavigation'
+import MainNavigation from './Navigation/MainNavigation'
 
 import styled from 'styled-components'
 import { breakpoints } from '../utils/breakpoints'
