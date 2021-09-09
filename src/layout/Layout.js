@@ -17,7 +17,7 @@ const PageLayout = styled.div`
   }
 `
 const BodyLayout = styled.div`
-  margin-top: 30px;
+  margin: 30px 20px 20px 20px;
   z-index: 200;
 `
 

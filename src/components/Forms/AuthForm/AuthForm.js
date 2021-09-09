@@ -12,6 +12,7 @@ const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  background-color: white;
 `
 
 const RegisterLink = styled.div`
@@ -36,7 +37,7 @@ const AuthForm = () => {
     <FormWrapper>
       <FormHeader>
         <Heading1>
-          Welcome to <Span color="var(--blue)">Feedback app</Span>
+          Welcome to <Span color="var(--blue)">MyFeedback</Span>
         </Heading1>
         <Heading2>
           {authView === authMode.login && 'Sign in'}

@@ -12,11 +12,13 @@ const StyledNav = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
-  padding: 10px 0%;
+  padding: 10px 20px;
   justify-content: space-between;
   align-items: center;
   background-color: white;
   z-index: 400;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 `
 
 const StyledNavList = styled.ul`
@@ -31,6 +33,8 @@ const StyledNavList = styled.ul`
   margin: 0;
   list-style: none;
   background-color: white;
+  box-shadow: ${(props) =>
+    props.collapsed ? 'none' : 'rgba(0, 0, 0, 0.10) 0px 8px 10px'};
   @media ${breakpoints.laptop} {
     display: flex;
     flex-direction: row;
@@ -49,6 +53,9 @@ const StyledNavLink = styled(Link)`
   color: black;
   text-decoration: none;
   font-weight: bold;
+  &:hover {
+    color: var(--blue);
+  }
 `
 
 const Logo = () => {

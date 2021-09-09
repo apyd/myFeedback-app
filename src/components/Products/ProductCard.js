@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import { Heading2, Heading3 } from '../UI/Text'
+import { Link } from 'react-router-dom'
 
-const StyledCard = styled.div`
+const StyledCard = styled(Link)`
   height: 150px;
   min-width: 320px;
   max-width: 700px;
@@ -38,7 +39,7 @@ const StyledHeader = styled.header`
 
 const ProductCard = (props) => {
   return (
-    <StyledCard key={props.key}>
+    <StyledCard to="/feedback" key={props.key}>
       <StyledImg src={props.backgroundImg} alt="example" />
       <StyledHeader>
         <Heading2 color="white">{props.title}</Heading2>
