@@ -11,7 +11,7 @@ const StyledHeading2 = styled.h2`
   color: ${(props) => props.color || 'black'};
 `
 const StyledHeading3 = styled.h3`
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin: 0;
   padding: 0;
   color: ${(props) => props.color || 'black'};
@@ -19,7 +19,7 @@ const StyledHeading3 = styled.h3`
 
 const StyledParagraph = styled.p`
   font-size: 1rem;
-  margin: 20px 5px;
+  margin: 20px 0px;
   padding: 0;
   color: ${(props) => props.color || 'black'};
 `

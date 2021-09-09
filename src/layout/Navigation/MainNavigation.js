@@ -8,19 +8,24 @@ import MenuIcon from './BurgerIcon'
 
 const StyledNav = styled.nav`
   display: flex;
-  position: relative;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0%;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  background-color: white;
+  z-index: 400;
 `
 
 const StyledNavList = styled.ul`
   display: ${(props) => (props.collapsed ? 'none' : 'flex')};
   flex-direction: column;
   position: absolute;
-  top: 65px;
+  top: 64px;
   left: 0;
-  width: 100vw;
+  width: 100%;
   z-index: 1000;
   padding: 0;
   margin: 0;
@@ -62,7 +67,7 @@ const MainNavigation = () => {
       <MenuIcon collapsed={isCollapsed} collapseHandler={menuToggleHandler} />
       <StyledNavList collapsed={isCollapsed}>
         <StyledNavItem>
-          <StyledNavLink to="/dashboard">Dashboard</StyledNavLink>
+          <StyledNavLink to="/products">Products</StyledNavLink>
         </StyledNavItem>
         <StyledNavItem>
           <StyledNavLink to="/roadmap">Roadmap</StyledNavLink>

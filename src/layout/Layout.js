@@ -11,13 +11,21 @@ const PageLayout = styled.div`
   @media ${breakpoints.laptop} {
     font-size: 16px;
   }
+  @media ${breakpoints.desktop} {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+`
+const BodyLayout = styled.div`
+  margin-top: 30px;
+  z-index: 200;
 `
 
 const Layout = (props) => {
   return (
     <PageLayout>
       <MainNavigation />
-      {props.children}
+      <BodyLayout>{props.children}</BodyLayout>
     </PageLayout>
   )
 }

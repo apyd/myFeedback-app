@@ -22,7 +22,7 @@ const FirstLine = styled.span`
   width: 50%;
   border-radius: 10px;
   background-color: var(--blue);
-  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 0.8);
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 0.6);
   transform-origin: ${(props) => (!props.collapsed ? 'bottom' : 'center')};
   transform: ${(props) =>
     !props.collapsed
@@ -35,7 +35,7 @@ const SecondLine = styled.span`
   margin: 7px 0;
   border-radius: 10px;
   background-color: var(--blue);
-  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 0.8);
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 0.6);
   transform-origin: ${(props) => (!props.collapsed ? 'top' : 'center')};
   transform: ${(props) =>
     !props.collapsed ? 'rotatez(-45deg)' : 'rotatez(0deg)'};
@@ -45,7 +45,7 @@ const ThirdLine = styled.span`
   width: 75%;
   border-radius: 10px;
   background-color: var(--blue);
-  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 0.8);
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 0.6);
   transform-origin: ${(props) => (!props.collapsed ? 'bottom' : 'center')};
   transform: ${(props) =>
     !props.collapsed

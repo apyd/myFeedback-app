@@ -7,5 +7,5 @@ const maxSize = {
 export const breakpoints = {
   tablet: `(min-width: ${maxSize.mobile})`,
   laptop: `(min-width: ${maxSize.tablet})`,
-  desktop: `(min-width: ${maxSize.laptop + 1})`,
+  desktop: `(min-width: ${maxSize.laptop})`,
 }

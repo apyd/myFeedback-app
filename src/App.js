@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import AuthPage from './pages/AuthPage'
-import Dashboard from './pages/Dashboard'
+import Products from './pages/Products'
 import AllFeedback from './pages/AllFeedback'
 import FeedbackDetails from './pages/FeedbackDetails'
 import Roadmap from './pages/Roadmap'
@@ -18,8 +18,8 @@ function App() {
           <Route path="/" exact>
             <AuthPage />
           </Route>
-          <Route path="/dashboard">
-            <Dashboard />
+          <Route path="/products">
+            <Products />
           </Route>
           <Route path="/feedback" exact>
             <AllFeedback />
