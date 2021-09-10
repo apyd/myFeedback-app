@@ -40,6 +40,7 @@ const StyledNavList = styled.ul`
     flex-direction: row;
     width: unset;
     position: static;
+    box-shadow: none;
   }
 `
 
@@ -74,16 +75,24 @@ const MainNavigation = () => {
       <MenuIcon collapsed={isCollapsed} collapseHandler={menuToggleHandler} />
       <StyledNavList collapsed={isCollapsed}>
         <StyledNavItem>
-          <StyledNavLink to="/products">Products</StyledNavLink>
+          <StyledNavLink onClick={() => setIsCollapsed(true)} to="/products">
+            Products
+          </StyledNavLink>
         </StyledNavItem>
         <StyledNavItem>
-          <StyledNavLink to="/roadmap">Roadmap</StyledNavLink>
+          <StyledNavLink onClick={() => setIsCollapsed(true)} to="/roadmap">
+            Roadmap
+          </StyledNavLink>
         </StyledNavItem>
         <StyledNavItem>
-          <StyledNavLink to="/preferences">Preferences</StyledNavLink>
+          <StyledNavLink onClick={() => setIsCollapsed(true)} to="/preferences">
+            Preferences
+          </StyledNavLink>
         </StyledNavItem>
         <StyledNavItem>
-          <StyledNavLink to="/">Logout</StyledNavLink>
+          <StyledNavLink onClick={() => setIsCollapsed(true)} to="/">
+            Logout
+          </StyledNavLink>
         </StyledNavItem>
       </StyledNavList>
     </StyledNav>
