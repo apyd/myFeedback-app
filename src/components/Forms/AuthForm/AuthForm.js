@@ -1,5 +1,6 @@
 import GoogleImg from '../../../assets/google-logo.svg'
-import { SSOButton, ButtonLink } from '../../UI/Button'
+import Button from '../../UI/Button'
+import PageLink from '../../UI/PageLink'
 import Login from './Login'
 import Register from './Register'
 import ResetPassword from './ResetPassword'
@@ -7,6 +8,7 @@ import { FormHeader, FormBody, FormFooter } from '../Forms'
 import { Heading1, Heading2, Paragraph, Span } from '../../UI/Text'
 import styled from 'styled-components'
 import { useState } from 'react'
+import Image from '../../UI/Image'
 
 const FormWrapper = styled.div`
   display: flex;
@@ -56,14 +58,17 @@ const AuthForm = () => {
         {authView === authMode.changePassword && <ResetPassword />}
       </FormBody>
       <FormFooter>
-        <SSOButton img={GoogleImg}>Sign in with Google</SSOButton>
+        <Button bgColor="white" color="var(--blue)">
+          <Image width="30px" src={GoogleImg} alt="Google logo" />
+          Sign in with Google
+        </Button>
         <RegisterLink>
           <Paragraph>
             {authView === authMode.register
               ? 'Already have account?'
               : 'Still without account?'}
           </Paragraph>
-          <ButtonLink
+          <PageLink
             onClick={() =>
               changeAuthViewHandler(
                 authView === authMode.register
@@ -73,7 +78,7 @@ const AuthForm = () => {
             }
           >
             {authView === authMode.register ? 'Log in' : 'Create one'}
-          </ButtonLink>
+          </PageLink>
         </RegisterLink>
       </FormFooter>
     </FormWrapper>

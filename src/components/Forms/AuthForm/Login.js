@@ -1,4 +1,5 @@
-import { Button, ButtonLink } from '../../UI/Button'
+import Button from '../../UI/Button'
+import PageLink from '../../UI/PageLink'
 import TextInput from '../../UI/TextInput'
 import { Form, FormActions } from '../Forms'
 
@@ -17,8 +18,10 @@ const Login = (props) => {
         label="Password"
       />
       <FormActions>
-        <Button>Login</Button>
-        <ButtonLink onClick={props.changeView}>Forgot password</ButtonLink>
+        <Button bgColor="var(--blue)" color="white">
+          Login
+        </Button>
+        <PageLink onClick={props.changeView}>Forgot password</PageLink>
       </FormActions>
     </Form>
   )

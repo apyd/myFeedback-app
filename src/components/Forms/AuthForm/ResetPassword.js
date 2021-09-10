@@ -1,4 +1,4 @@
-import { Button } from '../../UI/Button'
+import Button from '../../UI/Button'
 import TextInput from '../../UI/TextInput'
 import { Form, FormActions } from '../Forms'
 
