@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import { Input, Label } from '../Forms/Forms'
+import PropTypes from 'prop-types'
 
 const InputWrapper = styled.div`
   display: flex;
@@ -9,7 +10,7 @@ const InputWrapper = styled.div`
   margin: 20px auto;
 `
 
-const TextInput = (props) => {
+const TextInput = ({ id, name, type, labelText }) => {
   const [isTouched, setIsTouched] = useState(false)
 
   return (
@@ -17,16 +18,29 @@ const TextInput = (props) => {
       <Input
         isDirty={isTouched}
         onBlur={() => setIsTouched(true)}
-        id={props.id}
-        name={props.name}
-        placeholder={props.placeholder}
-        type={props.type}
+        id={id}
+        name={name}
+        type={type}
       />
-      <Label isDirty={isTouched} htmlFor={props.id}>
-        {props.label}
+      <Label isDirty={isTouched} htmlFor={id}>
+        {labelText}
       </Label>
     </InputWrapper>
   )
+}
+
+TextInput.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  type: PropTypes.string,
+  labelText: PropTypes.string,
+}
+
+TextInput.defaultProps = {
+  id: 0,
+  name: 'name',
+  type: 'text',
+  labelText: 'label',
 }
 
 export default TextInput
