@@ -1,79 +1,47 @@
 import styled from 'styled-components'
+import propTypes from 'prop-types'
 
 const StyledButton = styled.button`
-  font-size: 1rem;
-  font-family: inherit;
-  font-weight: bold;
-  padding: 0.8em 2em;
-  border: none;
-  border-radius: 2px;
-  color: white;
-  background-color: var(--blue);
-  &:hover {
-    cursor: pointer;
-  }
-`
-
-const StyledSSOButton = styled.button`
   display: flex;
   position: relative;
-  align-items: stretch;
-  justify-content: stretch;
+  align-items: center;
+  padding: 0.8em 2em;
+  border: none;
+  border-radius: 5px;
   font-size: 1rem;
   font-family: inherit;
-  padding: 0.8em 1em 0.8em 70px;
-  border: none;
-  border-radius: 2px;
-  background-color: var(--blue);
-  color: white;
   font-weight: bold;
+  color: ${(props) => props.color};
+  background-color: ${(props) => props.bgColor};
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   &:hover {
     cursor: pointer;
-  }
-  &:before {
-    position: absolute;
-    content: '';
-    background: url(${(props) => props.img}) center center no-repeat;
-    width: 50px;
-    background-color: white;
-    height: 100%;
-    left: 0%;
-    top: 0%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 `
 
-const Link = styled.button`
-  font-size: 1rem;
-  font-family: inherit;
-  padding: 0;
-  margin: 0;
-  padding-bottom: 2px;
-  border: none;
-  border-bottom: 1px solid var(--light-grey);
-  color: var(--blue);
-  background-color: transparent;
-  &:hover {
-    cursor: pointer;
-  }
-`
-
-const onClickHandler = (e, props) => {
-  e.preventDefault()
-  props.onClick()
-}
-
-export const Button = (props) => {
-  return <StyledButton onClick={props.onClick}>{props.children}</StyledButton>
-}
-
-export const SSOButton = (props) => {
-  return <StyledSSOButton img={props.img}>{props.children}</StyledSSOButton>
-}
-
-export const ButtonLink = (props) => {
+const Button = ({ color, bgColor, onClick, children, type }) => {
   return (
-    <Link onClick={(event) => onClickHandler(event, props)}>
-      {props.children}
-    </Link>
+    <StyledButton type={type} color={color} bgColor={bgColor} onClick={onClick}>
+      {children}
+    </StyledButton>
   )
+}
+
+export default Button
+
+Button.propTypes = {
+  color: propTypes.string,
+  bgColor: propTypes.string,
+  onClick: propTypes.func,
+  children: propTypes.node,
+  type: propTypes.string,
+}
+
+Button.defaultProps = {
+  color: 'black',
+  bgColor: 'white',
+  onClick: () => {},
+  children: null,
+  type: 'button',
 }
