@@ -7,20 +7,25 @@ const StyledSelect = styled.select`
   border-radius: 0.25em;
   padding: 0.25em 0.5em;
   margin: 1em 0;
-  font-size: 1.25rem;
+  font-size: 1rem;
+  font-family: inherit;
   cursor: pointer;
   line-height: 1.1;
   background-color: white;
 `
 
+const StyledOption = styled.option`
+  font-family: inherit;
+`
+
 const Select = ({ options, onChange }) => {
-  const items = options.map((item) => (
-    <option value={item.value}>{item.label}</option>
+  const selectOptions = options.map((item) => (
+    <StyledOption value={item.value}>{item.label}</StyledOption>
   ))
 
   return (
     <StyledSelect options={options} onChange={onChange}>
-      {items}
+      {selectOptions}
     </StyledSelect>
   )
 }
