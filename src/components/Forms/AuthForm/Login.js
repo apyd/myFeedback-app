@@ -1,3 +1,4 @@
+import { AppRoutes } from '../../../routing/AppRoutes'
 import Button from '../../UI/Button'
 import PageLink from '../../UI/PageLink'
 import TextInput from '../../UI/TextInput'
@@ -21,7 +22,7 @@ const Login = (props) => {
         <Button bgColor="var(--blue)" color="white">
           Login
         </Button>
-        <PageLink onClick={props.changeView}>Forgot password</PageLink>
+        <PageLink to={AppRoutes.FORGOT_PASSWORD}>Forgot password</PageLink>
       </FormActions>
     </Form>
   )
