@@ -27,14 +27,13 @@ const ImgWrapper = styled.div`
 `
 
 const Img = styled.img`
-    object-fit: cover;
-    display: block;
-    height: 100%;
-    width: 100%;
-  }
+  object-fit: cover;
+  display: block;
+  height: 100%;
+  width: 100%;
 `
 
-const Auth = () => {
+const Auth = (props) => {
   return (
     <AuthWrapper>
       <ImgWrapper>
