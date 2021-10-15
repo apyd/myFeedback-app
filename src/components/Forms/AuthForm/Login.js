@@ -19,9 +19,7 @@ const Login = (props) => {
         label="Password"
       />
       <FormActions>
-        <Button bgColor="var(--blue)" color="white">
-          Login
-        </Button>
+        <Button>Login</Button>
         <PageLink to={AppRoutes.FORGOT_PASSWORD}>Forgot password</PageLink>
       </FormActions>
     </Form>
