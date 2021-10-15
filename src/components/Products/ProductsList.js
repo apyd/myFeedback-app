@@ -1,9 +1,9 @@
 import ProductCard from './ProductCard'
-import img1 from '../../assets/product1.jpeg'
-import img2 from '../../assets/product2.jpeg'
-import img3 from '../../assets/product3.jpeg'
-import img4 from '../../assets/product4.jpeg'
-import img5 from '../../assets/product5.jpeg'
+import img1 from '../../assets/product1.png'
+import img2 from '../../assets/product2.png'
+import img3 from '../../assets/product3.png'
+import img4 from '../../assets/product4.png'
+import img5 from '../../assets/product5.png'
 
 const PRODUCTS_LIST = [
   {

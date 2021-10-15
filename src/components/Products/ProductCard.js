@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { Heading2, Heading3 } from '../UI/Text'
 import { Link } from 'react-router-dom'
+import { AppRoutes } from '../../routing/AppRoutes'
 
 const StyledCard = styled(Link)`
   height: 150px;
@@ -18,8 +19,8 @@ const StyledCard = styled(Link)`
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--grey);
-    opacity: 0.6;
+    background-color: ${(props) => props.theme.imageOverlayColor};
+    opacity: 0.55;
     border-radius: 5px;
   }
 `
@@ -39,11 +40,11 @@ const StyledHeader = styled.header`
 
 const ProductCard = (props) => {
   return (
-    <StyledCard to="/feedback" key={props.key}>
+    <StyledCard to={AppRoutes.FEEDBACK} key={props.key}>
       <StyledImg src={props.backgroundImg} alt="example" />
       <StyledHeader>
-        <Heading2 color="white">{props.title}</Heading2>
-        <Heading3 color="white">{props.description}</Heading3>
+        <Heading2 textColor="white">{props.title}</Heading2>
+        <Heading3 textColor="white">{props.description}</Heading3>
       </StyledHeader>
     </StyledCard>
   )
