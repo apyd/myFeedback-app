@@ -1,21 +1,21 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import { string, node } from 'prop-types'
 
 const StyledLink = styled(Link)`
   padding: 0;
   margin: 0 5px;
   padding-bottom: 2px;
   border: none;
-  border-bottom: 1px solid var(--light-grey);
+  border-bottom: 1px solid ${(props) => props.theme.secondary};
   font-size: 1rem;
   font-family: inherit;
   text-decoration: none;
-  color: var(--blue);
+  color: ${(props) => props.theme.secondary};
   background-color: transparent;
   &:hover {
     cursor: pointer;
-    border-bottom: 1px solid var(--grey);
+    border-bottom: 1px solid ${(props) => props.theme.secondary};
   }
 `
 
@@ -24,8 +24,8 @@ const PageLink = ({ to, children }) => {
 }
 
 PageLink.propTypes = {
-  to: PropTypes.string,
-  children: PropTypes.node,
+  to: string.isRequired,
+  children: node.isRequired,
 }
 
 PageLink.defaultProps = {

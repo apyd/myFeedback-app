@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import PropTypes from 'prop-types'
+import { objectOf, func } from 'prop-types'
 
 const StyledSelect = styled.select`
   width: 100%;
-  border: 1px solid var(--blue);
+  border: 1px solid ${(props) => props.theme.primary};
   border-radius: 0.25em;
   padding: 0.25em 0.5em;
   margin: 1em 0;
@@ -11,7 +11,7 @@ const StyledSelect = styled.select`
   font-family: inherit;
   cursor: pointer;
   line-height: 1.1;
-  background-color: white;
+  background-color: ${(props) => props.theme.textWhite};
 `
 
 const StyledOption = styled.option`
@@ -31,8 +31,8 @@ const Select = ({ options, onChange }) => {
 }
 
 Select.propTypes = {
-  options: PropTypes.objectOf({}),
-  onChange: PropTypes.func,
+  options: objectOf({}).isRequired,
+  onChange: func.isRequired,
 }
 
 Select.defaultProps = {

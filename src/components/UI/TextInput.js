@@ -10,7 +10,7 @@ const InputWrapper = styled.div`
   margin: 20px auto;
 `
 
-const TextInput = ({ id, name, type, labelText }) => {
+const TextInput = ({ id, name, type, label }) => {
   const [isTouched, setIsTouched] = useState(false)
 
   return (
@@ -23,24 +23,24 @@ const TextInput = ({ id, name, type, labelText }) => {
         type={type}
       />
       <Label isDirty={isTouched} htmlFor={id}>
-        {labelText}
+        {label}
       </Label>
     </InputWrapper>
   )
 }
 
 TextInput.propTypes = {
-  id: PropTypes.number,
-  name: PropTypes.string,
-  type: PropTypes.string,
-  labelText: PropTypes.string,
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
 }
 
 TextInput.defaultProps = {
   id: 0,
   name: 'name',
   type: 'text',
-  labelText: 'label',
+  label: 'label',
 }
 
 export default TextInput

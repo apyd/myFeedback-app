@@ -1,47 +1,56 @@
 import styled from 'styled-components'
-import propTypes from 'prop-types'
+import { string, func, node } from 'prop-types'
 
 const StyledButton = styled.button`
   display: flex;
   position: relative;
   align-items: center;
-  padding: 0.8em 2em;
-  border: none;
+  padding: ${(props) => props.padding};
+  border: ${(props) => props.theme.buttons[props.variant].border};
   border-radius: 5px;
   font-size: 1rem;
   font-family: inherit;
   font-weight: bold;
-  color: ${(props) => props.color};
-  background-color: ${(props) => props.bgColor};
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  color: ${(props) => props.theme.buttons[props.variant].textColor};
+  margin: ${(props) => props.margin};
+  background-color: ${(props) =>
+    props.theme.buttons[props.variant].backgroundColor};
   &:hover {
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: ${(props) => props.theme.buttons[props.variant].shadow};
   }
 `
 
-const Button = ({ color, bgColor, onClick, children, type }) => {
+const Button = ({ variant, onClick, children, type, padding, margin }) => {
   return (
-    <StyledButton type={type} color={color} bgColor={bgColor} onClick={onClick}>
+    <StyledButton
+      variant={variant}
+      type={type}
+      onClick={onClick}
+      padding={padding}
+      margin={margin}
+    >
       {children}
     </StyledButton>
   )
 }
 
-export default Button
-
 Button.propTypes = {
-  color: propTypes.string,
-  bgColor: propTypes.string,
-  onClick: propTypes.func,
-  children: propTypes.node,
-  type: propTypes.string,
+  variant: string,
+  onClick: func.isRequired,
+  children: node.isRequired,
+  type: string,
+  padding: string,
+  margin: string,
 }
 
 Button.defaultProps = {
-  color: 'black',
-  bgColor: 'white',
+  variant: 'primary',
   onClick: () => {},
   children: null,
   type: 'button',
+  padding: '0.8em 2em',
+  margin: '0px',
 }
+
+export default Button

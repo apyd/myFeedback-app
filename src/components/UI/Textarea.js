@@ -1,23 +1,24 @@
 import styled from 'styled-components'
-import PropTypes from 'prop-types'
+import { number, string, arrayOf, oneOf } from 'prop-types'
 
 const StyledTextArea = styled.textarea`
   width: 100%;
   padding: 15px;
-  border: 1px solid var(--blue);
+  border: 1px solid ${(props) => props.theme.border};
   border-radius: 5px;
   font-family: inherit;
   font-size: 1rem;
-  color: ${(props) => props.color};
-  background-color: ${(props) => props.bgColor};
+  color: ${(props) => props.theme.textDark};
+  background-color: ${(props) => props.theme.panel};
   resize: ${(props) => props.resizable};
+  &::placeholder {
+    color: ${(props) => props.theme.textDark};
+  }
 `
 
-const TextArea = ({ bgColor, color, rows, placeholder, resizable }) => {
+const TextArea = ({ rows, placeholder, resizable }) => {
   return (
     <StyledTextArea
-      bgColor={bgColor}
-      color={color}
       rows={rows}
       placeholder={placeholder}
       resizable={resizable}
@@ -26,18 +27,12 @@ const TextArea = ({ bgColor, color, rows, placeholder, resizable }) => {
 }
 
 TextArea.propTypes = {
-  bgColor: PropTypes.string,
-  color: PropTypes.string,
-  rows: PropTypes.number,
-  placeholder: PropTypes.string,
-  resizable: PropTypes.arrayOf(
-    PropTypes.oneOf(['none', 'both', 'horizontal', 'vertical'])
-  ),
+  rows: number,
+  placeholder: string.isRequired,
+  resizable: arrayOf(oneOf(['none', 'both', 'horizontal', 'vertical'])),
 }
 
 TextArea.defaultProps = {
-  bgColor: 'white',
-  color: 'black',
   rows: 10,
   placeholder: 'Text area placeholder',
   resizable: 'none',
