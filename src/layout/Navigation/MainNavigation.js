@@ -2,9 +2,11 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { breakpoints } from '../../utils/breakpoints'
 
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { Heading1 } from '../../components/UI/Text'
 import MenuIcon from './BurgerIcon'
+import ThemeToggle from '../../components/ThemeToggle/ThemeToggle'
+import Wrapper from '../../helpers/Wrapper'
 
 const StyledNav = styled.nav`
   display: flex;
@@ -15,7 +17,7 @@ const StyledNav = styled.nav`
   padding: 10px 20px;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: ${(props) => props.theme.panel};
   z-index: 400;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
@@ -32,9 +34,9 @@ const StyledNavList = styled.ul`
   padding: 0;
   margin: 0;
   list-style: none;
-  background-color: white;
+  background-color: ${(props) => props.theme.panel};
   box-shadow: ${(props) =>
-    props.collapsed ? 'none' : 'rgba(0, 0, 0, 0.10) 0px 8px 10px'};
+    props.collapsed ? props.theme.none : props.theme.boxShadow};
   @media ${breakpoints.laptop} {
     display: flex;
     flex-direction: row;
@@ -48,14 +50,17 @@ const StyledNavItem = styled.li`
   text-align: center;
 `
 
-const StyledNavLink = styled(Link)`
+const StyledNavLink = styled(NavLink)`
   display: inline-block;
   padding: 20px;
-  color: black;
+  color: ${(props) => props.theme.textDark};
   text-decoration: none;
   font-weight: bold;
   &:hover {
-    color: var(--blue);
+    color: ${(props) => props.theme.textDark};
+  }
+  &.${(props) => props.activeClassName} {
+    color: ${(props) => props.theme.secondary};
   }
 `
 
@@ -63,7 +68,7 @@ const Logo = () => {
   return <Heading1>MyFeedback</Heading1>
 }
 
-const MainNavigation = () => {
+const MainNavigation = (props) => {
   const [isCollapsed, setIsCollapsed] = useState(true)
   const menuToggleHandler = () => {
     setIsCollapsed(!isCollapsed)
@@ -71,26 +76,51 @@ const MainNavigation = () => {
 
   return (
     <StyledNav>
-      <Logo />
+      <Wrapper direction="row" align="center">
+        <Logo />
+        <ThemeToggle
+          padding="0.2em 0.4em"
+          activeTheme={props.activeTheme}
+          toggleTheme={props.toggleTheme}
+        />
+      </Wrapper>
+
       <MenuIcon collapsed={isCollapsed} collapseHandler={menuToggleHandler} />
       <StyledNavList collapsed={isCollapsed}>
         <StyledNavItem>
-          <StyledNavLink onClick={() => setIsCollapsed(true)} to="/products">
+          <StyledNavLink
+            activeClassName="active"
+            onClick={() => setIsCollapsed(true)}
+            to="/products"
+          >
             Products
           </StyledNavLink>
         </StyledNavItem>
         <StyledNavItem>
-          <StyledNavLink onClick={() => setIsCollapsed(true)} to="/roadmap">
+          <StyledNavLink
+            activeClassName="active"
+            onClick={() => setIsCollapsed(true)}
+            to="/roadmap"
+          >
             Roadmap
           </StyledNavLink>
         </StyledNavItem>
         <StyledNavItem>
-          <StyledNavLink onClick={() => setIsCollapsed(true)} to="/preferences">
+          <StyledNavLink
+            activeClassName="active"
+            onClick={() => setIsCollapsed(true)}
+            to="/preferences"
+          >
             Preferences
           </StyledNavLink>
         </StyledNavItem>
         <StyledNavItem>
-          <StyledNavLink onClick={() => setIsCollapsed(true)} to="/">
+          <StyledNavLink
+            activeClassName="active"
+            onClick={() => setIsCollapsed(true)}
+            to="/"
+            exact
+          >
             Logout
           </StyledNavLink>
         </StyledNavItem>

@@ -21,7 +21,7 @@ const FirstLine = styled.span`
   height: 5px;
   width: 50%;
   border-radius: 10px;
-  background-color: var(--blue);
+  background-color: ${(props) => props.theme.primary};
   transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 0.6);
   transform-origin: ${(props) => (!props.collapsed ? 'bottom' : 'center')};
   transform: ${(props) =>
@@ -34,7 +34,7 @@ const SecondLine = styled.span`
   width: 100%;
   margin: 7px 0;
   border-radius: 10px;
-  background-color: var(--blue);
+  background-color: ${(props) => props.theme.primary};
   transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 0.6);
   transform-origin: ${(props) => (!props.collapsed ? 'top' : 'center')};
   transform: ${(props) =>
@@ -44,7 +44,7 @@ const ThirdLine = styled.span`
   height: 5px;
   width: 75%;
   border-radius: 10px;
-  background-color: var(--blue);
+  background-color: ${(props) => props.theme.primary};
   transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 0.6);
   transform-origin: ${(props) => (!props.collapsed ? 'bottom' : 'center')};
   transform: ${(props) =>

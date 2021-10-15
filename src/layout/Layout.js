@@ -17,14 +17,20 @@ const PageLayout = styled.div`
   }
 `
 const BodyLayout = styled.div`
-  margin: 30px 20px 20px 20px;
+  margin: 100px 20px 20px 20px;
+  @media ${breakpoints.tablet} {
+    margin-top: 10px;
+  }
   z-index: 200;
 `
 
 const Layout = (props) => {
   return (
     <PageLayout>
-      <MainNavigation />
+      <MainNavigation
+        activeTheme={props.activeTheme}
+        toggleTheme={props.toggleTheme}
+      />
       <BodyLayout>{props.children}</BodyLayout>
     </PageLayout>
   )
