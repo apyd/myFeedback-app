@@ -11,7 +11,7 @@ const ThemeToggle = ({ activeTheme, toggleTheme }) => {
       onClick={toggleTheme}
     >
       {activeTheme === 'dark' && <HalfMoon width="32px" height="32px" />}
-      {activeTheme === 'light' && <Sun width="32px" height="32px" />}
+      {activeTheme !== 'dark' && <Sun width="32px" height="32px" />}
     </Button>
   )
 }
