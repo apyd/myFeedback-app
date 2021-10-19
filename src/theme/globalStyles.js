@@ -3,9 +3,15 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyles = createGlobalStyle`
     *, *::after, *::before {
         box-sizing: border-box;
+        font-size: 14px;
+        /* TODO: dynamic breakpoints*/
+        @media(min-width: 480px) {
+            font-size: 16px;
+        };
     }
 
     body {
+        height: 100vh;
         background-color: ${({ theme }) => theme.background};
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,8 +19,8 @@ const GlobalStyles = createGlobalStyle`
             sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        height: 100vh;
         transition: background-color 0.25s linear;
+
     }
 
     code {

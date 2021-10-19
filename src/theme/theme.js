@@ -18,7 +18,7 @@ const colors = {
     error: 'rgb(223,41,53)',
     success: 'rgb(95,173,65)',
     boxShadow:
-      'rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px',
+      'rgba(0, 0, 0, 0.1) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px',
     transparent: 'transparent',
     none: 'none',
   },
@@ -41,7 +41,8 @@ const colors = {
     error: 'rgb(232, 100, 108)',
     success: 'rgb(148, 206, 125)',
     boxShadow:
-      'rgba(255, 255, 255, 0.1) 0px 1px 3px 0px, rgba(255, 255, 255, 0.06) 0px 1px 2px 0px',
+      'rgba(255, 255, 255, 0.1) 0px 2px 5px -1px, rgba(255, 255, 255, 0.06) 0px 1px 3px -1px',
+
     transparent: 'transparent',
     none: 'none',
   },
@@ -70,13 +71,13 @@ export const lightTheme = {
     primary: {
       backgroundColor: colors.light.primary,
       textColor: colors.light.textWhite,
-      border: colors.light.border,
+      border: colors.light.primary,
       boxShadow: colors.light.boxShadow,
     },
     secondary: {
       backgroundColor: colors.light.secondary,
       textColor: colors.light.textWhite,
-      border: colors.light.border,
+      border: colors.light.secondary,
       boxShadow: colors.light.boxShadow,
     },
     tertiary: {
@@ -117,13 +118,13 @@ export const darkTheme = {
     primary: {
       backgroundColor: colors.dark.primary,
       textColor: colors.dark.textWhite,
-      border: colors.dark.border,
+      border: colors.dark.primary,
       boxShadow: colors.dark.boxShadow,
     },
     secondary: {
       backgroundColor: colors.dark.secondary,
       textColor: colors.dark.textWhite,
-      border: colors.dark.border,
+      border: colors.dark.secondary,
       boxShadow: colors.dark.boxShadow,
     },
     tertiary: {
