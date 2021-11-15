@@ -2,6 +2,7 @@ import { Heading3, Paragraph, Span } from '../UI/Text'
 import { ReactComponent as CommentIcon } from '../../assets/comments.svg'
 import VoteCounter from '../UI/VoteCounter'
 import { useTheme } from 'styled-components'
+import { AppRoutes } from '../../routing/AppRoutes'
 import {
   StyledFeedbackCard,
   FeedbackCardText,
@@ -14,7 +15,7 @@ const FeedbackCard = (props) => {
   const { secondary, background } = theme
 
   return (
-    <StyledFeedbackCard>
+    <StyledFeedbackCard to={AppRoutes.FEEDBACK_DETAILS}>
       <FeedbackCardText>
         <Heading3>{props.title}</Heading3>
         <Paragraph>{props.description}</Paragraph>

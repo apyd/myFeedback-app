@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import { breakpoints } from '../../utils/breakpoints'
+import { Link } from 'react-router-dom'
 
-export const StyledFeedbackCard = styled.div`
+export const StyledFeedbackCard = styled(Link)`
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -10,10 +11,12 @@ export const StyledFeedbackCard = styled.div`
   padding: 20px 20px 10px 20px;
   background-color: ${(props) => props.theme.panel};
   border-radius: 5px;
+  text-decoration: none;
   &:hover {
     cursor: pointer;
   }
   @media ${breakpoints.tablet} {
+    grid-template-rows: 40px 40px 40px;
     padding: 0px;
   }
 `
