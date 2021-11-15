@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 const useDarkMode = () => {
   const [theme, setTheme] = useState('light')
   const [componentMounted, setComponentMounted] = useState(false)
-  const toggleTheme = () => {
+  const toggleTheme = (initDarkTheme) => {
     if (theme === 'light') {
       window.localStorage.setItem('mode', 'dark')
       setTheme('dark')
@@ -14,12 +14,13 @@ const useDarkMode = () => {
   }
 
   useEffect(() => {
-    const localTheme =
-      window.localStorage.getItem('mode') ||
-      window.matchMedia('(prefers-color-scheme: dark)').matches ||
-      'light'
+    const preservedTheme = window.localStorage.getItem('mode')
+    const preferedColorScheme = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches
+
+    let localTheme = !preservedTheme & preferedColorScheme ? 'dark' : 'light'
     localTheme && setTheme(localTheme)
-    console.log(localTheme)
     setComponentMounted(true)
   }, [])
 
