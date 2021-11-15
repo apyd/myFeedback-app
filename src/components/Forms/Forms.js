@@ -4,10 +4,11 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   flex: 2;
+  align-items: flex-start;
 `
 
 export const Input = styled.input`
-  font-size: 1rem;
+  font-size: inherit;
   color: ${(props) =>
     props.isDirty ? props.theme.error : props.theme.textDark};
   background-color: inherit;
@@ -17,18 +18,20 @@ export const Input = styled.input`
   transition: 0.2s ease all;
   width: 100%;
   padding-bottom: 5px;
+  padding-left: 2px;
 `
 export const Label = styled.label`
-  font-size: 1rem;
+  font-size: inherit;
   position: absolute;
   top: ${(props) => (props.isDirty ? '-20px' : '-0px')};
-  font-size: ${(props) => (props.isDirty ? '14px' : '16px')};
+  right: 0px;
+  font-size: ${(props) => (props.isDirty ? '0.8rem' : '1rem')};
   color: ${(props) =>
     props.isDirty ? props.theme.error : props.theme.textDark};
-  left: 0;
+  left: 2px;
   transition: 0.2s ease all;
   ${Input}:focus ~ & {
-    font-size: 14px;
+    font-size: 0.8rem;
     top: -20px;
   }
 `
@@ -53,7 +56,8 @@ export const FormFooter = styled.footer`
 
 export const FormActions = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: ${(props) => props.justify || 'space-between'};
   align-items: center;
   margin-top: 20px;
+  width: 100%;
 `
