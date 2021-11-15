@@ -7,6 +7,6 @@ export const AppRoutes = {
   ROADMAP: '/roadmap',
   PREFERENCES: '/preferences',
   FEEDBACK: '/feedbacks',
-  FEEDBACK_DETAILS: 'feedback/:id',
+  FEEDBACK_DETAILS: '/feedback-details',
   NOTFOUND: '*',
 }
