@@ -6,12 +6,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { AppRoutes } from './routing/AppRoutes'
 import Home from './pages/Home'
 import Products from './pages/Products'
-import AllFeedback from './pages/AllFeedback'
+import Feedback from './pages/Feedback.js'
 import FeedbackDetails from './pages/FeedbackDetails'
 import Roadmap from './pages/Roadmap'
 import Preferences from './pages/Preferences'
 import NotFound from './pages/NotFound'
-
 import Layout from './layout/Layout'
 import Auth from './pages/Auth'
 
@@ -45,9 +44,9 @@ function App() {
               <Products />
             </Route>
             <Route path={AppRoutes.FEEDBACK} exact>
-              <AllFeedback />
+              <Feedback />
             </Route>
-            <Route path={`${AppRoutes.FEEDBACK_DETAILS}/:id`}>
+            <Route path={`${AppRoutes.FEEDBACK_DETAILS}`}>
               <FeedbackDetails />
             </Route>
             <Route path={AppRoutes.ROADMAP}>

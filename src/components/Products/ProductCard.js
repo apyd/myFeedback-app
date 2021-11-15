@@ -1,11 +1,11 @@
 import styled from 'styled-components'
-import { Heading2, Heading3 } from '../UI/Text'
+import { Heading2, Paragraph } from '../UI/Text'
 import { Link } from 'react-router-dom'
 import { AppRoutes } from '../../routing/AppRoutes'
 
 const StyledCard = styled(Link)`
   height: 150px;
-  min-width: 320px;
+  min-width: 280px;
   max-width: 700px;
   position: relative;
   &:hover {
@@ -44,7 +44,7 @@ const ProductCard = (props) => {
       <StyledImg src={props.backgroundImg} alt="example" />
       <StyledHeader>
         <Heading2 textColor="white">{props.title}</Heading2>
-        <Heading3 textColor="white">{props.description}</Heading3>
+        <Paragraph textColor="white">{props.description}</Paragraph>
       </StyledHeader>
     </StyledCard>
   )

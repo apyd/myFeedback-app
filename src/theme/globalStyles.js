@@ -11,7 +11,6 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        height: 100vh;
         background-color: ${({ theme }) => theme.background};
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -20,7 +19,7 @@ const GlobalStyles = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         transition: background-color 0.25s linear;
-
+        height: 100vh;
     }
 
     code {

@@ -28,8 +28,13 @@ const AuthForm = () => {
     <FormWrapper>
       <FormHeader>
         <Heading1 textColor={textDark}>
-          Welcome to{' '}
-          <Span textColor={secondary} fontWeight="bold">
+          Welcome to
+          <Span
+            textColor={secondary}
+            fontWeight="bold"
+            fontSize="1.4rem"
+            padding="0 5px"
+          >
             MyFeedback
           </Span>
         </Heading1>

@@ -21,6 +21,11 @@ const StyledNav = styled.nav`
   z-index: 400;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  @media ${breakpoints.laptop} {
+    max-width: 1024px;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
 `
 
 const StyledNavList = styled.ul`
@@ -33,6 +38,7 @@ const StyledNavList = styled.ul`
   z-index: 1000;
   padding: 0;
   margin: 0;
+  border-radius: 5px;
   list-style: none;
   background-color: ${(props) => props.theme.panel};
   box-shadow: ${(props) =>
@@ -79,7 +85,6 @@ const MainNavigation = (props) => {
       <Wrapper direction="row" align="center">
         <Logo />
         <ThemeToggle
-          padding="0.2em 0.4em"
           activeTheme={props.activeTheme}
           toggleTheme={props.toggleTheme}
         />
