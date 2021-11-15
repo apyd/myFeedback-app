@@ -2,16 +2,20 @@ import styled from 'styled-components'
 import { objectOf, func } from 'prop-types'
 
 const StyledSelect = styled.select`
+  /* appearance: none; */
+  background: none;
   width: 100%;
-  border: 1px solid ${(props) => props.theme.primary};
-  border-radius: 0.25em;
-  padding: 0.25em 0.5em;
+  border: none;
+  border-bottom: 1px solid ${(props) => props.theme.textDark};
+  /* border-radius: 0.25em; */
+  /* padding: 0.25em 0.5em; */
   margin: 1em 0;
-  font-size: 1rem;
+  padding-bottom: 5px;
+  font-size: inherit;
   font-family: inherit;
+  color: ${(props) => props.theme.textDark};
   cursor: pointer;
   line-height: 1.1;
-  background-color: ${(props) => props.theme.textWhite};
 `
 
 const StyledOption = styled.option`

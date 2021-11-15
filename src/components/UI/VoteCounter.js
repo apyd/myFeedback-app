@@ -6,11 +6,11 @@ import { useTheme } from 'styled-components'
 
 const VoteCounter = ({ value, disabled }) => {
   const theme = useTheme()
-  const { primary } = theme
+  const { secondary } = theme
 
   return (
-    <Button variant="tertiary" disabled={disabled} padding="0" shadow="none">
-      <UpArrow width="36px" fill={primary} alt="votes number" />
+    <Button variant="tertiary" padding="0" disabled={disabled}>
+      <UpArrow width="36px" fill={secondary} alt="votes number" />
       <Span fontWeight="bold">{value}</Span>
     </Button>
   )

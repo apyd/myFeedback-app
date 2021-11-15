@@ -6,7 +6,7 @@ const StyledButton = styled.button`
   position: relative;
   align-items: center;
   padding: ${(props) => props.padding};
-  border: ${(props) => props.theme.buttons[props.variant].border};
+  border: 1px solid ${(props) => props.theme.buttons[props.variant].border};
   border-radius: 5px;
   font-size: 1rem;
   font-family: inherit;
@@ -49,7 +49,7 @@ Button.defaultProps = {
   onClick: () => {},
   children: null,
   type: 'button',
-  padding: '0.8em 2em',
+  padding: '0.8em 1.6em',
   margin: '0px',
 }
 

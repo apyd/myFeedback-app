@@ -8,7 +8,6 @@ const StyledLink = styled(Link)`
   padding-bottom: 2px;
   border: none;
   border-bottom: 1px solid ${(props) => props.theme.secondary};
-  font-size: 1rem;
   font-family: inherit;
   text-decoration: none;
   color: ${(props) => props.theme.secondary};

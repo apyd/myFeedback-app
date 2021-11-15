@@ -14,32 +14,35 @@ const HiddenRadio = styled.input`
   margin: -1px;
   overflow: hidden;
   padding: 0;
-  position: absolute;
+
   white-space: nowrap;
   width: 1px;
 `
 
 const StyledLabel = styled.label`
-  display: inline-block;
-  padding: 10px 20px;
+  display: block;
+  padding: 0.5rem 0.8rem;
   margin: 0 5px;
-  border: 1px solid ${(props) => props.theme.primary};
+  white-space: nowrap;
+  border: 1px solid ${(props) => props.theme.secondary};
   border-radius: 5px;
   background-color: ${(props) =>
-    props.checked ? props.theme.primary : props.theme.transparent};
+    props.checked ? props.theme.secondary : props.theme.transparent};
   color: ${(props) =>
     props.checked ? props.theme.textWhite : props.theme.textDark};
   font-weight: bold;
+  display: flex;
+  flex: 1;
 
   &:hover {
     cursor: pointer;
   }
 `
 
-const Tag = ({ id, name, value, label, select, onChange }) => {
+const Tag = ({ id, name, value, label, select, onChange, rotated }) => {
   return (
     <>
-      <TagWrapper>
+      <TagWrapper rotated={rotated}>
         <HiddenRadio
           type="radio"
           id={id}
@@ -48,7 +51,7 @@ const Tag = ({ id, name, value, label, select, onChange }) => {
           checked={select === value}
           onChange={(event) => onChange(event)}
         />
-        <StyledLabel for={id} checked={select === value}>
+        <StyledLabel for={id} checked={select === value} rotated={rotated}>
           {label}
         </StyledLabel>
       </TagWrapper>
